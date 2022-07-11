@@ -1,7 +1,11 @@
+import { Dialog } from "@headlessui/react";
+import ReactTyped from "react-typed";
+import Header from "./components/Header.js";
+
 function App() {
   return (
-    <div className="App">
-      <h1>This is a website with react</h1>
+    <div className="bg-black h-screen text-zinc-100 relative">
+      <Header />
     </div>
   );
 }
