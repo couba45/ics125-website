@@ -5,6 +5,9 @@ module.exports = {
       height: {
         "fit-content": "fit-content",
       },
+      width: {
+        "fit-content": "fit-content",
+      },
     },
   },
   plugins: [],

@@ -6,7 +6,7 @@ import { Dialog } from "@headlessui/react";
 import Axios from "axios";
 
 function Header(props) {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
   let [nav, setNav] = useState(true);
   let handleNav = () => {
     setNav(!nav);
@@ -19,10 +19,12 @@ function Header(props) {
     setIsOpen(true);
   }
   return (
-    <nav className="p-8 relative">
+    <nav className="p-8 relative z-20">
       <div className="flex flex-row justify-between">
         <div className="text-4xl md:text-6xl">
-          <div className="text-emerald-400 font-extrabold">LOGO</div>
+          <div className="text-emerald-400 font-extrabold z-10 relative">
+            LOGO
+          </div>
         </div>
         <div
           className="md:hidden cursor-pointer hover:text-emerald-500 transition"
@@ -33,7 +35,7 @@ function Header(props) {
         <div
           className={
             !nav
-              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 pt-24 pl-7 pr-5 ease-in-out duration-500 md:hidden"
+              ? "fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 pt-24 pl-7 pr-5 ease-in-out duration-500 md:hidden bg-black"
               : "fixed -left-[100%] pt-24 h-full top-0 md:hidden ease-in-out duration-500"
           }
         >
@@ -58,7 +60,7 @@ function Header(props) {
                 <Dialog
                   open={isOpen}
                   onClose={closeModal}
-                  className="absolute top-0 left-0 flex flex-col justify-center items-center w-screen h-screen"
+                  className="absolute top-0 left-0 flex flex-col justify-center items-center w-screen h-screen z-50"
                 >
                   <Transition.Child
                     as={Fragment}
@@ -80,7 +82,7 @@ function Header(props) {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="md:max-w-sm w-[60%] h-fit-content  p-7 bg-zinc-100 rounded-md">
+                    <Dialog.Panel className="md:max-w-sm w-[60%] h-fit-content  p-7 bg-zinc-100 rounded-md z-50">
                       <Dialog.Title>
                         <div className="w-[100%]">
                           <div className="text-3xl md:text-4xl font-bold font-sans text-emerald-400 w-[70%] text-center mx-auto ">
@@ -162,7 +164,7 @@ function Header(props) {
                 <Dialog
                   open={isOpen}
                   onClose={closeModal}
-                  className="absolute top-0 left-0 flex flex-col justify-center items-center w-screen h-screen"
+                  className="absolute top-0 left-0 flex flex-col justify-center items-center w-screen h-screen z-50"
                 >
                   <Transition.Child
                     as={Fragment}
@@ -184,7 +186,7 @@ function Header(props) {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="md:max-w-sm w-[60%] h-fit-content  p-7 bg-zinc-100 rounded-md">
+                    <Dialog.Panel className="md:max-w-sm w-[60%] h-fit-content  p-7 bg-zinc-100 rounded-md z-50">
                       <Dialog.Title>
                         <div className="w-[100%]">
                           <div className="text-3xl md:text-4xl font-bold font-sans text-emerald-400 w-[70%] text-center mx-auto ">
