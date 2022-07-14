@@ -2,6 +2,9 @@ import { Dialog } from "@headlessui/react";
 import ReactTyped from "react-typed";
 import Header from "./components/Header.js";
 import Hero from "./components/Hero.js";
+import Modal from "./components/Modal.js";
+import About from "./components/About.js";
+import Comments from "./components/Comments.js";
 
 function App() {
   return (
@@ -10,6 +13,8 @@ function App() {
         <Header />
         <Hero />
       </div>
+      <About />
+      <Comments />
     </div>
   );
 }

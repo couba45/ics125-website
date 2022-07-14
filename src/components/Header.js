@@ -4,25 +4,19 @@ import React from "react";
 import { MenuAlt1Icon, XIcon } from "@heroicons/react/solid";
 import { Dialog } from "@headlessui/react";
 import Axios from "axios";
+import Modal from "../components/Modal.js";
 
 function Header(props) {
-  let [isOpen, setIsOpen] = useState(false);
   let [nav, setNav] = useState(true);
   let handleNav = () => {
     setNav(!nav);
   };
-  function closeModal() {
-    setIsOpen(false);
-  }
 
-  function openModal() {
-    setIsOpen(true);
-  }
   return (
-    <nav className="p-8 relative z-20">
+    <nav className="p-7 fixed z-20 w-screen bg-black">
       <div className="flex flex-row justify-between">
-        <div className="text-4xl md:text-6xl">
-          <div className="text-emerald-400 font-extrabold z-10 relative">
+        <div className="text-4xl md:text-5xl">
+          <div className="text-emerald-400 font-extrabold z-10 relative ">
             LOGO
           </div>
         </div>
@@ -44,101 +38,13 @@ function Header(props) {
               Home
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
-              About
+              <a href="#about">About</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
               Comments
             </li>
             <li className=" p-4">
-              <button
-                className="p-3 font-bold border-2 rounded-md border-emerald-400 text-emerald-400 hover:text-zinc-100 hover:bg-emerald-400 transition"
-                onClick={openModal}
-              >
-                Sign Up
-              </button>
-              <Transition appear={true} show={isOpen} as={Fragment}>
-                <Dialog
-                  open={isOpen}
-                  onClose={closeModal}
-                  className="absolute top-0 left-0 flex flex-col justify-center items-center w-screen h-screen z-50"
-                >
-                  <Transition.Child
-                    as={Fragment}
-                    enter="transition ease-out duration-300"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="transition ease-out duration-200"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <div className="fixed inset-0 bg-black bg-opacity-25" />
-                  </Transition.Child>
-                  <Transition.Child
-                    as={Fragment}
-                    enter="transition ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="transition ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                  >
-                    <Dialog.Panel className="md:max-w-sm w-[60%] h-fit-content  p-7 bg-zinc-100 rounded-md z-50">
-                      <Dialog.Title>
-                        <div className="w-[100%]">
-                          <div className="text-3xl md:text-4xl font-bold font-sans text-emerald-400 w-[70%] text-center mx-auto ">
-                            Sign Up
-                          </div>
-                        </div>
-                      </Dialog.Title>
-                      <Dialog.Description className="my-5">
-                        Please enter your e-mail and comment:
-                      </Dialog.Description>
-                      <form action="">
-                        <div className="flex flex-col gap-4">
-                          <div>
-                            <label htmlFor="user_email" className="font-bold">
-                              E-mail:
-                            </label>
-                            <input
-                              type="email"
-                              id="user_email"
-                              placeholder="example@mail.com"
-                              className="w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:outline-none "
-                              required
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="comment" className="font-bold">
-                              Comment:
-                            </label>
-                            <textarea
-                              name=""
-                              id="comment"
-                              className="h-24 w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:drop-shadow-xl focus:outline-none "
-                              cols="30"
-                              rows="10"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <button
-                          type="submit"
-                          className="rounded-full border-2 border-emerald-400 text-emerald-400 px-4 py-2 mr-4 mt-3"
-                        >
-                          Submit
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsOpen(false);
-                          }}
-                          className="rounded-full border-2 border-zinc-900 text-zinc-900 px-4 py-2 mr-4 mt-3"
-                        >
-                          Cancel
-                        </button>
-                      </form>
-                    </Dialog.Panel>
-                  </Transition.Child>
-                </Dialog>
-              </Transition>
+              <Modal />
             </li>
           </ul>
         </div>
@@ -148,101 +54,13 @@ function Header(props) {
               Home
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer">
-              About
+              <a href="#about">About</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer">
               Comments
             </li>
             <li>
-              <button
-                className="p-3 font-bold border-2 rounded-md border-emerald-400 text-emerald-400 hover:text-zinc-100 hover:bg-emerald-400 transition"
-                onClick={openModal}
-              >
-                Sign Up
-              </button>
-              <Transition appear={true} show={isOpen} as={Fragment}>
-                <Dialog
-                  open={isOpen}
-                  onClose={closeModal}
-                  className="absolute top-0 left-0 flex flex-col justify-center items-center w-screen h-screen z-50"
-                >
-                  <Transition.Child
-                    as={Fragment}
-                    enter="transition ease-out duration-300"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="transition ease-out duration-200"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                  >
-                    <div className="fixed inset-0 bg-black bg-opacity-25" />
-                  </Transition.Child>
-                  <Transition.Child
-                    as={Fragment}
-                    enter="transition ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="transition ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                  >
-                    <Dialog.Panel className="md:max-w-sm w-[60%] h-fit-content  p-7 bg-zinc-100 rounded-md z-50">
-                      <Dialog.Title>
-                        <div className="w-[100%]">
-                          <div className="text-3xl md:text-4xl font-bold font-sans text-emerald-400 w-[70%] text-center mx-auto ">
-                            Sign Up
-                          </div>
-                        </div>
-                      </Dialog.Title>
-                      <Dialog.Description className="my-5">
-                        Please enter your e-mail and comment:
-                      </Dialog.Description>
-                      <form action="">
-                        <div className="flex flex-col gap-4">
-                          <div>
-                            <label htmlFor="user_email" className="font-bold">
-                              E-mail:
-                            </label>
-                            <input
-                              type="email"
-                              id="user_email"
-                              placeholder="example@mail.com"
-                              className="w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:outline-none "
-                              required
-                            />
-                          </div>
-                          <div>
-                            <label htmlFor="comment" className="font-bold">
-                              Comment:
-                            </label>
-                            <textarea
-                              name=""
-                              id="comment"
-                              className="h-24 w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:drop-shadow-xl focus:outline-none "
-                              cols="30"
-                              rows="10"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <button
-                          type="submit"
-                          className="rounded-full border-2 border-emerald-400 text-emerald-400 px-4 py-2 mr-4 mt-3"
-                        >
-                          Submit
-                        </button>
-                        <button
-                          onClick={() => {
-                            setIsOpen(false);
-                          }}
-                          className="rounded-full border-2 border-zinc-900 text-zinc-900 px-4 py-2 mr-4 mt-3"
-                        >
-                          Cancel
-                        </button>
-                      </form>
-                    </Dialog.Panel>
-                  </Transition.Child>
-                </Dialog>
-              </Transition>
+              <Modal />
             </li>
           </ul>
         </div>
