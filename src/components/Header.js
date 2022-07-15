@@ -35,13 +35,13 @@ function Header(props) {
         >
           <ul className="">
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
-              Home
+              <a href="#home">Home</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
               <a href="#about">About</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
-              Comments
+              <a href="#comments">Comments</a>
             </li>
             <li className=" p-4">
               <Modal />
@@ -51,13 +51,13 @@ function Header(props) {
         <div className="hidden md:block">
           <ul className="flex flex-col md:flex-row gap-6 items-center h-[100%]">
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer">
-              Home
+              <a href="#home">Home</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer">
               <a href="#about">About</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer">
-              Comments
+              <a href="#comments">Comments</a>
             </li>
             <li>
               <Modal />

@@ -1,9 +1,22 @@
 import { Dialog, Transition } from "@headlessui/react";
+import axios from "axios";
 import { Fragment, useState } from "react";
 
 export default function About() {
   let [isOpen, setIsOpen] = useState(false);
+  let [userEmail, setUserEmail] = useState("");
+  let [comment, setComment] = useState("");
 
+   function addUserComment() {
+     axios
+      .post("http://localhost:3001/comment", {
+        userEmail: userEmail,
+        comment: comment,
+      })
+      .then(() => {
+        console.log("success");
+      });
+  }
   function closeModal() {
     setIsOpen(false);
   }
@@ -51,9 +64,9 @@ export default function About() {
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title>
-                    <h1 className="text-4xl font-bold leading-6 text-emerald-400 mb-7 text-center">
+                    <div className="text-4xl font-bold leading-6 text-emerald-400 mb-7 text-center">
                       Sign In
-                    </h1>
+                    </div>
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="mb-3">
@@ -68,6 +81,7 @@ export default function About() {
                           <input
                             type="email"
                             id="user_email"
+                            onChange={(e) => setUserEmail(e.target.value)}
                             placeholder="example@mail.com"
                             className="w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:outline-none "
                             required
@@ -80,6 +94,7 @@ export default function About() {
                           <textarea
                             name=""
                             id="comment"
+                            onChange={(e) => setComment(e.target.value)}
                             className="h-24 w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:drop-shadow-xl focus:outline-none "
                             cols="30"
                             rows="10"
@@ -88,6 +103,7 @@ export default function About() {
                       </div>
                       <button
                         type="submit"
+                        onClick={() => addUserComment()}
                         className="rounded-full border-2 border-emerald-400 text-emerald-400 px-4 py-2 mr-4 mt-3 hover:text-zinc-100 hover:bg-emerald-400 transition"
                       >
                         Submit

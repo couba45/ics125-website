@@ -9,7 +9,7 @@ import Comments from "./components/Comments.js";
 function App() {
   return (
     <div>
-      <div className="bg-black h-screen text-zinc-100 relative">
+      <div id="home" className="bg-black h-screen text-zinc-100 relative w-screen">
         <Header />
         <Hero />
       </div>
