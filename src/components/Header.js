@@ -2,8 +2,7 @@ import { Transition } from "@headlessui/react";
 import { useState, Fragment } from "react";
 import React from "react";
 import { MenuAlt1Icon, XIcon } from "@heroicons/react/solid";
-import { Dialog } from "@headlessui/react";
-import Axios from "axios";
+
 import Modal from "../components/Modal.js";
 
 function Header(props) {
@@ -17,7 +16,9 @@ function Header(props) {
       <div className="flex flex-row justify-between">
         <div className="text-4xl md:text-5xl">
           <div className="text-emerald-400 font-extrabold z-10 relative ">
-            LOGO
+            <a className="cursor-pointer" href="http://localhost:3000/">
+              LOGO
+            </a>
           </div>
         </div>
         <div
@@ -35,13 +36,13 @@ function Header(props) {
         >
           <ul className="">
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
-              <a href="#home">Home</a>
+              <a href="/home">Home</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
-              <a href="#about">About</a>
+              <a href="/about">About</a>
             </li>
             <li className="hover:text-emerald-400 transition font-bold cursor-pointer p-4 uppercase border-b border-gray-600">
-              <a href="#comments">Comments</a>
+              <a href="/comments">Comments</a>
             </li>
             <li className=" p-4">
               <Modal />
