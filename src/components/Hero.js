@@ -24,7 +24,7 @@ function Hero() {
               />
             </p>
           </div>
-          <a href="https://github.com/couba45/ICS125_2022">
+          <a href="https://github.com/FOIIM/qol">
             <div className="w-[300px] mx-auto bg-emerald-400 text-black p-4 rounded-md mt-6 cursor-pointer font-bold hover:bg-emerald-700 hover:text-zinc-50 transition duration-200 ease-out">
               Get Started
             </div>

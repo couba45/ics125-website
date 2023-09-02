@@ -1,28 +1,28 @@
-import { Dialog, Transition } from "@headlessui/react";
-import axios from "axios";
-import { Fragment, useState } from "react";
+import { Dialog, Transition } from '@headlessui/react'
+import axios from 'axios'
+import { Fragment, useState } from 'react'
 
 export default function About() {
-  let [isOpen, setIsOpen] = useState(false);
-  let [userEmail, setUserEmail] = useState("");
-  let [comment, setComment] = useState("");
+  let [isOpen, setIsOpen] = useState(false)
+  let [userEmail, setUserEmail] = useState('')
+  let [comment, setComment] = useState('')
 
-   function addUserComment() {
-     axios
-      .post("http://localhost:3001/comment", {
+  function addUserComment() {
+    axios
+      .post('http://localhost:8080/comment', {
         userEmail: userEmail,
-        comment: comment,
+        comment: comment
       })
       .then(() => {
-        console.log("success");
-      });
+        console.log('success')
+      })
   }
   function closeModal() {
-    setIsOpen(false);
+    setIsOpen(false)
   }
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(true)
   }
 
   return (
@@ -81,7 +81,7 @@ export default function About() {
                           <input
                             type="email"
                             id="user_email"
-                            onChange={(e) => setUserEmail(e.target.value)}
+                            onChange={e => setUserEmail(e.target.value)}
                             placeholder="example@mail.com"
                             className="w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:outline-none "
                             required
@@ -94,7 +94,7 @@ export default function About() {
                           <textarea
                             name=""
                             id="comment"
-                            onChange={(e) => setComment(e.target.value)}
+                            onChange={e => setComment(e.target.value)}
                             className="h-24 w-[100%] border-2 border-emerald-400 p-1 rounded-md focus:drop-shadow-xl focus:outline-none "
                             cols="30"
                             rows="10"
@@ -112,8 +112,8 @@ export default function About() {
                         type="button"
                         onClick={() => {
                           setTimeout(() => {
-                            setIsOpen(false);
-                          }, 0);
+                            setIsOpen(false)
+                          }, 0)
                         }}
                         className="rounded-full border-2 border-zinc-900 text-zinc-900 px-4 py-2 mr-4 mt-3 hover:bg-zinc-900 hover:text-white transition ease-in-out"
                       >
@@ -128,5 +128,5 @@ export default function About() {
         </Dialog>
       </Transition>
     </>
-  );
+  )
 }

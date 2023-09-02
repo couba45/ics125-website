@@ -10,21 +10,13 @@ function About() {
         <div className="md:w-[100%]">
           <h1 className="text-4xl md:text-5xl pt-16 font-bold mb-7">About:</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis ab
-            eaque voluptates rem, dolores nihil facere! Quisquam, tempore ipsum,
-            voluptates laboriosam qui nemo incidunt atque temporibus velit in
-            itaque explicabo! Sed inventore mollitia sapiente vero vel tempore
-            eos enim, veritatis optio, consequatur quibusdam quod earum error ab
-            soluta ratione maiores maxime atque minima illo blanditiis corporis
-            magni id unde! Autem. Officia odio odit nemo, suscipit fugit sequi
-            eius nam aperiam aliquid reiciendis sunt atque enim ex. Quas ea
-            repudiandae optio iure, totam est esse modi eos molestiae recusandae
-            mollitia obcaecati. Aspernatur atque cum ad tempore laudantium quae
-            cumque ratione voluptatibus fuga. Eveniet repudiandae sint, eligendi
-            necessitatibus laborum ullam quidem, consequatur eos odio ipsam
-            aspernatur quisquam quam porro facilis ratione dolor. Modi
-            repellendus tempore animi laudantium eius quidem possimus saepe
-            minus aut itaque. Perferendis esse consequuntur impedit, adipisci
+            The project is based around the popular video game, Minecraft. The
+            task is to create a mod and implement our ideas into the video game.
+            We created a website to promote the mod and use MySQL to store the
+            user information and feedback. The project was created because we’re
+            all interested in Minecraft. We strive to improve the vanilla
+            version of the game to allow many gamers to have an increased
+            immersive experience in Minecraft.
           </p>
         </div>
         <div className="w-[100%]">

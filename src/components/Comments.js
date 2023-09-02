@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Comment from "./Comment";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import Comment from './Comment'
 
 function Comments() {
-  let [userList, setUserList] = useState([]);
-  let [triger, setTriger] = useState(0);
+  let [userList, setUserList] = useState([])
+  let [triger, setTriger] = useState(0)
 
   let handleComments = () => {
-    setTriger(triger++);
-  };
+    setTriger(triger++)
+  }
   useEffect(() => {
-    axios.get("http://localhost:3001/users").then((response) => {
-      setUserList(response.data);
-      console.log("This is second?");
-    });
-  }, [triger]);
+    axios.get('http://localhost:8080/users').then(response => {
+      setUserList(response.data)
+      console.log('This is second?')
+    })
+  }, [triger])
 
   return (
     <div
@@ -29,11 +29,11 @@ function Comments() {
         className="w-full flex flex-col lg:grid lg:grid-cols-3 gap-6"
       >
         {userList.map((val, key) => {
-          return <Comment email={val.user_email} comment={val.comment} />;
+          return <Comment email={val.user_email} comment={val.comment} />
         })}
       </div>
     </div>
-  );
+  )
 }
 
-export default Comments;
+export default Comments
